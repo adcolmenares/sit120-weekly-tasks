@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIT120 - Week 1 Practical Task</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        
+    </head>
+    <body>
+         <h1style="color:black;">Alessandra Colmenares</h1>
+         <h2>Student ID: 221235688</h2>
+         <h3>Pass Task 1</h3>
+         <p>Instructions: HTML stands for Hypertext Markup Language. "Markup language" means that, rather than using a programming language to perform functions. Create an HTML page that includes at least five main HTML tags (like image, references, tables, forms, etc.). Please see Week 1 Task 1 video and visit 
+         <a href="https://www.w3schools.com/">https://www.w3schools.com/html/</a> 
+         for more information on HTML details.</p>
+ 
+         <img src="https://miro.medium.com/max/600/0*npRqA-IodJWs4jae.jpg" alt="Responsive Web Apps. Source: medium.com">
+         
+         <button onclick="getDate()">Get date</button>
+         <p id="date"></p>
+         <table>
+             <tr>
+                 <th>TASK 1</th>
+                 <th>TASK 2</th>
+                 <th>TASK 3</th>
+                 <th>TASK 4</th>
+                 <th>TASK 5</th>
+             </tr>
+             <tr>
+                 <td>Pass</td>
+                 <td>Pass</td>
+                 <td>Pass</td>
+                 <td>Pass</td>
+                 <td>Credit</td>
+             </tr>
+             <tr>
+                 <td>Finished</td>
+                 <td>Ongoing</td>
+                 <td>Ongoing</td>
+                 <td>Ongoing</td>
+                 <td>Ongoing</td>
+             </tr>
+         </table>
+        <div id="app">
+            <div 
+             v-for="todo in todos" 
+              :key="todo.title"
+              :style="{ textDecoration: todo.checked? 'line-through':'none' }"
+            >
+            <input type="checkbox" v-model="todo.checked" />
+            {{ todo.title}}
+
+        </div>
+        </div>
+     </body>
+     <script src="js/script.js"></script>
+</html>
