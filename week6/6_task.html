@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+            <title>Week 6</title>
+        </head>
+
+        <body>
+            <div id="app">
+                <p>Username</p>
+                <input 
+                    v-model="name"
+                    type="text"
+                    placeholder="Please enter username"/>
+
+                <p>Password</p>
+                <input 
+                    v-model="password"
+                    type="password" 
+                    placeholder="Please enter password"/>
+
+                <p>Range</p>
+                <input type="range"/>
+
+                <p>Number</p>
+                <input type="number"/>
+
+                <p>Month</p>
+                <input type="month"/>
+
+                <p>Gender</p>
+                <select v-model="selected">
+                    <option disabled value="">Please select one</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+                  <span>Selected: {{ selected }}</span>
+                
+                <p>To-do list</p>
+                <input 
+                    type="checkbox" 
+                    id="sit120" 
+                    value="SIT120" 
+                    v-model="checkedNames">
+                <label for="sit120">SIT120 - Introduction to Responsive Web Apps</label>
+
+                <input 
+                    type="checkbox" 
+                    id="sit102" 
+                    value="SIT102" 
+                    v-model="checkedNames">
+                <label for="SIT02">SIT102 - Introduction to Programming</label>
+
+                <input 
+                    type="checkbox" 
+                    id="sit103" 
+                    value="SIT103" 
+                    v-model="checkedNames">
+                <label for="sit103">SIT103 - Data and Information Management</label>
+
+                <input 
+                    type="checkbox" 
+                    id="mis201" 
+                    value="MIS201" 
+                    v-model="checkedNames">
+                <label for="mis201">MIS201 - Business Requirements Analysis</label>
+                <br>
+                <span>Checked names: {{ checkedNames }}</span>
+            </div>
+        </body>
+</html>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            name: 'Alessandra',
+            password: 'qwertyuiop',
+            checkedNames: [],
+            selected: '',
+        },
+    });
+</script>
