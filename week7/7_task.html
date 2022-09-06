@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--<link rel="stylesheet" href="style.css">-->
+    
+</head>
+
+<body>
+    <div id="details">
+        <player-details title = "Player details"></player-details>
+        <hr>
+        <!-- global registration -->
+        <player-details></player-details> 
+        <!-- local registration -->
+        <play-det></play-det> 
+        <hr>
+    </div>
+
+    <div id="idnumber">
+        <div class="container">
+          <h1>{{heading}}</h1>
+          <player-id @applied="onidEntered"></player-id>
+          <h2 v-if="idEntered">Valid player ID</h2>
+        </div>
+        <hr>
+    </div>
+
+    <div id="weapon">
+        <h1>Weapon list</h1>
+        <hr>
+
+        <weapon-det>
+          <slot #name>
+            <h2>Excalibur</h2>
+          </slot>
+
+          <slot #photo>
+            <img src="assets/exc.gif" />
+          </slot>
+
+          <slot #desc>
+            <h2>Owned by: Alessandra</h2>
+          </slot>
+        </weapon-det>
+    </div>
+
+  <script src="7_task.js"></script>
+</body>
